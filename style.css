@@ -1,0 +1,26 @@
+.today-style {padding-bottom:100px;
+    padding-top:100px;
+ 
+}
+
+.time-div h1 {text-align:center;
+    padding-top: 50px;
+    font-size: 100px;
+
+}
+
+body {margin-bottom: 30px;
+
+}
+
+.present {
+    background-color: red;
+}
+
+.future {
+    background-color: greenyellow;
+}
+
+.past {
+    background-color: grey;
+}

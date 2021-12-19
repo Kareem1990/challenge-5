@@ -4,9 +4,149 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" >
 </head>
 <body>
+    <header>
+        <div class="time-div">
+        <h1>Work Day Scheduler</h1>
+        <h3 id="today" class="today-style d-flex justify-content-center"></h3>
+        </div>
+    </header>
+
+    <div class="container c-12">
+      
+      
+      <div class="task-slot border-top border-bottom border-dark"> 
+       <h3>8:00 am</h3>
+        <div class="task-item" id="lot-8am" data-time="8am" >
+            <button class='btn btn-primary float-right'>Save</button>
+            <h4 class="task-title" id="task-title">Task Title</h4>
+         <span Class= "task-time" id="task-time">8:00 am - 9:00 am</span>
+        </div>
+      </div>
     
+    
+      <div class="task-slot border-top border-bottom border-dark"> 
+        <h3>9:00 am</h3>
+         <div class="task-item" id="lot-9am" data-time="9am" >
+          <button class='btn btn-primary float-right'>Save</button>
+          <h4 class="task-title">Task Title</h4>
+          <span Class= "task-time">9:00 am - 10:00 am</span>    
+         </div>
+       </div>
+
+       <div class="task-slot border-top border-bottom border-dark"> 
+        <h3>10:00 am</h3>
+         <div class="task-item" id="lot-10am" data-time="10am" >
+          <button class='btn btn-primary float-right'>Save</button>
+          <h4 class="task-title">Task Title</h4>
+          <span Class= "task-time">10:00 am - 11:00 am</span>    
+         </div>
+       </div>
+
+       <div class="task-slot border-top border-bottom border-dark"> 
+        <h3>11:00 am</h3>
+         <div class="task-item" id="lot-11am" data-time="11am" >
+          <button class='btn btn-primary float-right'>Save</button>
+          <h4 class="task-title">Task Title</h4>
+          <span Class= "task-time">11:00 am - 12:00 pm</span>    
+         </div>
+       </div>
+
+       <div class="task-slot border-top border-bottom border-dark"> 
+        <h3>12:00 pm</h3>
+         <div class="task-item" id="lot-12pm" data-time="12pm" >
+          <button class='btn btn-primary float-right'>Save</button>
+          <h4 class="task-title">Task Title</h4>
+          <span Class= "task-time">12:00 pm - 1:00 pm</span>    
+         </div>
+       </div>
+
+       <div class="task-slot border-top border-bottom border-dark"> 
+        <h3>1:00 pm</h3>
+         <div class="task-item" id="lot-1pm" data-time="1pm" >
+          <button class='btn btn-primary float-right'>Save</button>
+          <h4 class="task-title">Task Title</h4>
+          <span Class= "task-time">1:00 pm - 2:00 pm</span>    
+         </div>
+       </div>
+
+       <div class="task-slot border-top border-bottom border-dark"> 
+        <h3>2:00 pm</h3>
+         <div class="task-item" id="lot-2pm" data-time="2pm" >
+          <button class='btn btn-primary float-right'>Save</button>
+          <h4 class="task-title">Task Title</h4>
+          <span Class= "task-time">2:00 pm - 3:00 pm</span>    
+         </div>
+       </div>
+
+       <div class="task-slot border-top border-bottom border-dark"> 
+        <h3>3:00 pm</h3>
+         <div class="task-item" id="lot-3pm" data-time="3pm" >
+          <button class='btn btn-primary float-right'>Save</button>
+          <h4 class="task-title">Task Title</h4>
+          <span Class= "task-time">3:00 pm - 4:00 pm</span>    
+         </div>
+       </div>
+
+       <div class="task-slot border-top border-bottom border-dark"> 
+        <h3>4:00 pm</h3>
+         <div class="task-item" id="lot-4pm" data-time="4pm" >
+          <button class='btn btn-primary float-right'>Save</button>
+          <h4 class="task-title">Task Title</h4>
+          <span Class= "task-time">4:00 pm - 5:00 pm</span>    
+         </div>
+       </div>
+
+       <div class="task-slot border-top border-bottom border-dark"> 
+        <h3>5:00 pm</h3>
+         <div class="task-item" id="lot-5pm" data-time="5p" >
+          <button class='btn btn-primary float-right'>Save</button>
+          <h4 class="task-title">Task Title</h4>
+          <span Class= "task-time">5:00 pm - 6:00 pm</span>    
+         </div>
+       </div>
+
+       <div class="task-slot border-top border-bottom border-dark"> 
+        <h3>6:00 pm</h3>
+         <div class="task-item" id="lot-6pm" data-time="6pm" >
+          <button class='btn btn-primary float-right'>Save</button>
+          <h4 class="task-title">Task Title</h4>
+          <span Class= "task-time">6:00 pm - 7:00 pm</span>    
+         </div>
+       </div>
+
+       <div class="task-slot border-top border-bottom border-dark"> 
+        <h3>7:00 pm</h3>
+         <div class="task-item" id="lot-7pm" data-time="7pm" >
+          <button class='btn btn-primary float-right'>Save</button>
+          <h4 class="task-title">Task Title</h4>
+          <span Class= "task-time">7:00 pm - 8:00 pm</span>    
+         </div>
+       </div>
+    
+       <div class="task-slot border-top border-bottom border-dark"> 
+        <h3>8:00 pm</h3>
+         <div class="task-item" id="lot-8pm" data-time="8pm" >
+          <button class='btn btn-primary float-right'>Save</button>
+          <h4 class="task-title">Task Title</h4>
+          <span Class= "task-time">8:00 pm - 9:00 pm</span>    
+         </div>
+       </div>    
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>  
 </body>
 </html>
