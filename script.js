@@ -1,11 +1,9 @@
 let currentDay = $("#today");
 var today = moment().format('LLLL');
 currentDay.text("Today is " + today);
+var currentHour = moment().format("H");
 var tasks = [];
-
-// var loadTasks = function() {
-//     tasks = JSON.parse(localStorage.getItem("tasks"));
-// }
+var $timeBlocks = $(".time-slot");
 
 
 
@@ -29,17 +27,38 @@ var text = $(this).val();
 var h4 = $("<h4>").addClass("item-title").text(text);
 // var id = $(this).parent()[0].id;
 $(this).replaceWith(h4);
+
 });
 
-var saveTasks = function() {localStorage.setItem("tasks", JSON.stringify(tasks));};
 
-//creating button to save tasks//
 
+var saveTasks = function() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+};
+
+var loadTasks = function() {
+    var savedTasks = localStorage.getItem("tasks");
+  
+        savedTasks = JSON.parse(savedTasks);
+
+        
+  // loop through savedTasks array
+  for (var i = 0; i < savedTasks.length; i++) {
+    createTask(savedTasks[i]);
+  }
+};
+
+
+//creating button to save tasks in local storage as object//
 
 $(".task-item").on("click", ".btn-primary", function() {
     
-    var taskText = $(".task-title").val();
-    var taskDate = $(".task-time").val();
+    
+    var taskText = $(this).siblings("h4").text();
+    var taskDate = $(this).siblings("span").text();
+    
+
+     //saving date and time in tasks object
 
     var taskObj = {
         text : taskText,
@@ -48,54 +67,37 @@ $(".task-item").on("click", ".btn-primary", function() {
 
     tasks.push(taskObj);
   
-    // console.log('button clicked');
+
     // console.log("taskText");
     // console.log("taskDate");
-
+     console.log($(this).parent().attr("id"));
+     //this refers to the button
+     // parent to the div
+     
     saveTasks();
-
 });
 
+// coloring the slot
+function slotColors(){
+    var $taskSlot = $(".task-slot");
+    $taskSlot.each(function(){
+      var $thisSlot = $(this);
+      var slotHour = parseInt($thisSlot.attr("data-time"));
+
+//styling blocks if matched the if terms
+      if (slotHour == currentHour) {
+        $thisSlot.addClass("present").removeClass("past future");
+      }
+      if (slotHour < currentHour) {
+        $thisSlot.addClass("past").removeClass("present future");
+      }
+      if (slotHour > currentHour) {
+        $thisSlot.addClass("future").removeClass("past present");
+      }
+    });
+}
+
+slotColors();
 
 
-// loadTasks();
-
-
-
-//time pass function//
-
-$(".task-item").each(function () {
- let timeItemValue = localStorage.getItem(this.id);
- if (timeItemvalue) {
-     $(this).find("h4").text(timeItemValue);
- }
-
- let time = $(this).attr("data-time");
-
-
- if (parseInt(time) == parseInt(moment().format("LLLL"))) {
-    $(this).addClass("present");
- }
-
- if (parseInt(time) < parseInt(moment().format("LLLL"))) {
-    $(this).addClass("past");
- }
-
- if (parseInt(time) > parseInt(moment().format("LLLL"))) {
-    $(this).addClass("future");
- }
-});
-
-// $(".btn-primary").click(function() {
-
-//     var taskText = $(".task-title").val();
-    
-//     if (taskText) {
-//       createTask(taskText);
-  
-//       tasks.push({
-//         text: taskText});
-  
-//       saveTasks();
-//     }
-//   });
+loadTasks();
